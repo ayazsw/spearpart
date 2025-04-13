@@ -1,0 +1,141 @@
+*{
+     padding: 0;
+     margin: 0;      
+}
+body{
+  background-color: hsla(0, 4%, 50%, 0.301);
+  font-family: Arial, Helvetica, sans-serif;
+  color: hsl(240, 6%, 10%);
+}
+.container{
+  display: flex;
+  width: 50vw;
+  height: auto;
+  flex-direction: column;
+}
+.container h1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100vw;
+}
+
+.choose{
+  padding:20px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  flex-wrap: wrap;
+}
+#input{
+  width: 10vw;
+  padding: 5px 4px;
+  border: none;
+  border-radius: 9px;
+
+}
+#itemsSelect{
+  width: 40vw;
+  margin: 10px;
+  padding: 5px 4px;
+  border: none;
+  border-radius: 9px;
+  font-size: large;
+  background-color: white;
+}
+#addbtn{
+  padding: 10px 15px;
+  width: 10vw;
+  border: none;
+  border-radius: 9px;
+  background-color: white;
+  margin: 10px 
+}
+.inputt{
+  margin: 0 10px;
+  width: 20vw;
+  margin: 10px 
+}
+.table{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+table{
+  width: 100vw;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th,td{
+  padding: 10px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+th {
+  background-color: #a1a1a1f3;
+}
+tbody tr:nth-child(even){
+  background-color: #f9f9f9;
+}
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+#itemTotal{
+  font-size : 15px;
+  text-align : left;
+}
+#subtotal{
+  background-color: gray;
+  font-weight: bold;
+}
+#downloadPDF{
+  position: relative;
+  bottom: 0;
+  margin-top: 30px;
+  height: 5vh;
+  width: 30vw;
+}
+.brncontainer{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  
+  
+}
+  
+
+@media only screen and (max-width: 600px){
+  .choose{
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #input{
+    width: 40vw;
+    padding: 10px 15px;
+  
+  }
+  #itemsSelect{
+    width: 50vw;
+    font-size: medium;
+    height: 45px;
+    text-align: center;
+  }
+  #addbtn{
+    padding: 7px 10px;
+    width: 30vw;
+    height: 40px;
+    font-size: 15px;
+    
+    
+  }
+  .choose label{
+    width: 35vw;
+    text-align: center;
+  }
+  .inputt{
+    justify-content: center;
+  }
+}
