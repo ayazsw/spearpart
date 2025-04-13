@@ -52,10 +52,12 @@ document.getElementById("addbtn").addEventListener("click", function () {
   const itemQuantity = document.createElement("td");
   itemQuantity.textContent = quantity;
   row.appendChild(itemQuantity);
+  itemQuantity.style.textAlign = "center";
 
   const itemTotal = document.createElement("td");
   itemTotal.textContent = "Rs."+getTotal;
   row.appendChild(itemTotal);
+  itemTotal.style.textAlign = "right";
 
   totalquantity += Number(quantity);
   totalPrice += Number(getTotal);
@@ -67,19 +69,23 @@ document.getElementById("addbtn").addEventListener("click", function () {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
+  TotalCell.style.textAlign = "right";
+
   const Totalquantitycell = document.getElementById("totalquantity");
   Totalquantitycell.textContent = totalquantity;
+  Totalquantitycell.style.textAlign = "center";
 
   const subtotal = document.getElementById("subtotal");
   subtotal.textContent = "Rs."+totalPrice.toLocaleString("en-IN", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
+  subtotal.style.textAlign = "right";
 
   document.getElementById("tableBody").appendChild(row);
 });
 document.getElementById("downloadPDF").addEventListener("click", () => {
-  const printArea = document.querySelector(".table"); // target your table container
+  const printArea = document.querySelector(".pdf"); // target your table container
 
   html2canvas(printArea).then((canvas) => {
     const imgData = canvas.toDataURL("image/png");

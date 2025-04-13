@@ -61,43 +61,64 @@
       <input id="input" type="number" min="1" placeholder="quantity" class="inputt">
       <button id="addbtn" class="inputt">Add Product</button>
     </div>
-    <div class="table">
-      <table border="1">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Item</th>
-            <th scope="col">price</th>
-            <th scope="col">quantity</th>
-            <th scope="col">Amount</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody"></tbody>
-        <tfoot id="foot">
-          <tr>
-            <td class="hi" colspan="3" style="text-align: right;"><strong>Total</strong></td>
+    <div class="pdf">
+      <div class="diamond">
+        <div class="log"><img src="/img/logo.png" alt="logo"></div>
+        <div class="content">
+          <h1>Diamond &#9670 Engine oil LTD Pakistan</h1>
+          <p>Metrovill SITE Orangi Town Karachi</p>
+          <div class="contanct">
+            <div class="phone"><label for="">Phone:</label>
+              <p>03032995425</p>
+            </div>
+            <div class="email"><label for="">Email: </label>
+              <p>saleemtraderssgr@gmail.com</p>
+            </div>
+          </div>
+        </div>
 
-            <td id="totalquantity">0.00</td>
-            <td id="itemTotal">0.00</td>
+      </div>
+      <div class="table">
+        <table border="1">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Item</th>
+              <th scope="col">price</th>
+              <th scope="col" style="text-align: center;">quantity</th>
+              <th scope="col" style="text-align: right;">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+          <tfoot id="foot">
+            <tr>
+              <td class="hi" colspan="3" style="text-align: right;"><strong>Total</strong></td>
 
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="4" style="text-align: right;">Sub Total</td>
-            <td id="subtotal">0.00</td>
-          </tr>
-        </tfoot>
+              <td id="totalquantity">0.00</td>
+              <td id="itemTotal">0.00</td>
+
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="4" style="text-align: right;">Sub Total</td>
+              <td id="subtotal">0.00</td>
+            </tr>
+          </tfoot>
 
 
-      </table>
+        </table>
+
+      </div>
+      <p class="footPara">For Diamond &#9670 Engine oil LTD Pakistan:_______________</p>
+      <div class="brncontainer"> <button id="downloadPDF">Download as PDF</button></div>
     </div>
-    <div class="brncontainer"> <button id="downloadPDF">Download as PDF</button></div>
+
 
   </div>
 
