@@ -73,15 +73,12 @@ document.getElementById("addbtn").addEventListener("click", function () {
 
   const Contact = document.getElementById("contactno").value;
   document.getElementById("phone").textContent = "Contact: " + Contact;
-  
 
   const invoiceNo = document.getElementById("invoiceNo").value;
   document.getElementById("invoice").textContent = "No: " + invoiceNo;
 
   const date = document.getElementById("date").value;
   document.getElementById("tareekh").textContent = "Date: " + date;
-
-  
 
   const selectedItem = document.getElementById("itemsSelect").value;
   const quantity = document.getElementById("input").value;
@@ -144,7 +141,7 @@ document.getElementById("downloadPDF").addEventListener("click", () => {
   const printArea = document.querySelector(".pdf"); // target your table container
 
   html2canvas(printArea).then((canvas) => {
-    const imgData = canvas.toDataURL("image/png");
+    const imgData = canvas.toDataURL("image/jpeg", 0.8);
     const pdf = new jspdf.jsPDF("p", "mm", "a4");
 
     const pageWidth = pdf.internal.pageSize.getWidth();
