@@ -110,9 +110,37 @@ document.getElementById("addbtn").addEventListener("click", function () {
   row.appendChild(itemTotal);
   itemTotal.style.textAlign = "right";
 
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "🗑️";
+  removeBtn.style.cursor = "pointer";
+  removeBtn.style.border = "none";
+  removeBtn.style.background = "transparent";
+  removeBtn.style.fontSize = "16px";
+  removeBtn.classList.add("remove-btn");
+
+  const removecell = document.createElement("td");
+  removecell.appendChild(removeBtn);
+  row.appendChild(removecell);
+
   totalquantity += Number(quantity);
   totalPrice += Number(getTotal);
 
+  document.getElementById("tableBody").appendChild(row);
+  updateTotal();
+
+  removeBtn.addEventListener("click", function () {
+    const qty = Number(itemQuantity.textContent);
+    const price = Number(
+      itemTotal.textContent.replace("Rs.", "").replace(",", "")
+    );
+    totalquantity -= qty;
+    totalPrice -= price;
+    updateTotal(); // Update total after removal
+    row.remove();
+  });
+});
+
+function updateTotal() {
   const TotalCell = document.getElementById("itemTotal");
   TotalCell.textContent =
     "Rs." +
@@ -134,10 +162,15 @@ document.getElementById("addbtn").addEventListener("click", function () {
       maximumFractionDigits: 2,
     });
   subtotal.style.textAlign = "right";
+}
 
-  document.getElementById("tableBody").appendChild(row);
-});
 document.getElementById("downloadPDF").addEventListener("click", () => {
+  // Temporarily remove the remove buttons from the DOM
+  const removeBtns = document.querySelectorAll(".remove-btn");
+  removeBtns.forEach((btn) => {
+    btn.style.display = "none"; // Hide the remove buttons
+  });
+
   const printArea = document.querySelector(".pdf"); // target your table container
 
   html2canvas(printArea).then((canvas) => {
@@ -152,5 +185,10 @@ document.getElementById("downloadPDF").addEventListener("click", () => {
 
     pdf.addImage(imgData, "PNG", 0, 10, imgWidth, imgHeight);
     pdf.save("Spare_Parts_Report.pdf");
+
+    // Restore the remove buttons after generating the PDF
+    removeBtns.forEach((btn) => {
+      btn.style.display = "inline"; // Or "block", depending on your layout
+    });
   });
 });
