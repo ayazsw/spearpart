@@ -14,7 +14,12 @@
 
   <div class="container">
     <h1>Spear Part Mini Project</h1>
-    <div class="choose"><label for="itemsSelect" class="inputt">Please choose an item</label>
+    <div class="choose"><input type="text" id="name" placeholder="Name">
+      <input type="number" id="contactno" placeholder="Phone No:">
+      <input type="number" id="invoiceNo" placeholder="Invoice No:">
+      <input type="text" id="date" placeholder="Date">
+      <label for="itemsSelect" class="inputt">Please choose an
+        item</label>
       <select name="items" id="itemsSelect" class="inputt">
         <option value="">--please select an item--</option>
         <option value="Diamond-700ml x 12 SAE 20W50 API-SG/CD">Diamond-700ml x 12 SAE 20W50 API-SG/CD</option>
@@ -60,6 +65,7 @@
       </select>
       <input id="input" type="number" min="1" placeholder="quantity" class="inputt">
       <button id="addbtn" class="inputt">Add Product</button>
+
     </div>
     <div class="pdf">
       <div class="diamond">
@@ -77,6 +83,29 @@
           </div>
         </div>
 
+      </div>
+      <div class="invoice">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Bill To</th>
+              <th scope="col">Invoice detail</th>
+            </tr>
+          </thead>
+          <tbody id="invoicea">
+            <tr>
+              <td id="cusname">
+                </td>
+              <td id="invoice"></td>
+            
+            <tr>
+              <td id="phone"></td>
+              <td id="tareekh"></td>
+            </tr>
+
+
+          </tbody>
+        </table>
       </div>
       <div class="table">
         <table border="1">
@@ -115,10 +144,10 @@
         </table>
 
       </div>
-      <p class="footPara">For Diamond &#9670 Engine oil LTD Pakistan:_______________</p>
-      <div class="brncontainer"> <button id="downloadPDF">Download as PDF</button></div>
+      <p class="footPara">For Diamond &#9670 Engine oil LTD Pakistan:_____________________________________</p>
+      
     </div>
-
+    <div class="brncontainer"> <button id="downloadPDF">Download as PDF</button></div>
 
   </div>
 
