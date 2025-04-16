@@ -135,7 +135,7 @@ document.getElementById("addbtn").addEventListener("click", function () {
     );
     totalquantity -= qty;
     totalPrice -= price;
-    updateTotal(); // Update total after removal
+    updateTotal(); 
     row.remove();
   });
 });
@@ -165,13 +165,13 @@ function updateTotal() {
 }
 
 document.getElementById("downloadPDF").addEventListener("click", () => {
-  // Temporarily remove the remove buttons from the DOM
+  
   const removeBtns = document.querySelectorAll(".remove-btn");
   removeBtns.forEach((btn) => {
-    btn.style.display = "none"; // Hide the remove buttons
+    btn.style.display = "none";
   });
 
-  const printArea = document.querySelector(".pdf"); // target your table container
+  const printArea = document.querySelector(".pdf"); 
 
   html2canvas(printArea).then((canvas) => {
     const imgData = canvas.toDataURL("image/jpeg", 0.8);
@@ -186,9 +186,9 @@ document.getElementById("downloadPDF").addEventListener("click", () => {
     pdf.addImage(imgData, "PNG", 0, 10, imgWidth, imgHeight);
     pdf.save("Spare_Parts_Report.pdf");
 
-    // Restore the remove buttons after generating the PDF
+    
     removeBtns.forEach((btn) => {
-      btn.style.display = "inline"; // Or "block", depending on your layout
+      btn.style.display = "inline"; 
     });
   });
 });
